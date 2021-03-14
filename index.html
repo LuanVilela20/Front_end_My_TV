@@ -8,6 +8,8 @@
     <title>Index</title>
   </head>
  <body>
+
+
     <header>
      <div class="container-fluid">
        <img src="img/icone_index_sem_nome.png" alt="Icone index">
@@ -18,40 +20,193 @@
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Programas</a>
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="#">Listar Programação</a>
-             <a class="dropdown-item" href="#">Cadastrar Programa</a>
+             <a class="dropdown-item" href="#" id="programListBtn">Listar Programação</a>
+             <a class="dropdown-item teste" href="#" id="cadastrar">Cadastrar Programa</a>
            </div>
          </li>
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="#">Listar Categorias</a>
-             <a class="dropdown-item" href="#">Cadastrar Categorias</a>
+             <a class="dropdown-item" href="#" id="listKindBtn">Listar Tipos</a>
+             <a class="dropdown-item" href="#" id="kindCadBtn">Cadastrar Tipos</a>
            </div>
          </li>
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Canais</a>
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="#">Listar Canais</a>
-             <a class="dropdown-item" href="#">Cadastrar Canais</a>
+             <a class="dropdown-item" href="#" id="listChannelBtn">Listar Canais</a>
+             <a class="dropdown-item" href="#" id="channelCadBtn">Cadastrar Canais</a>
            </div>
          </li>
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plataformas</a>
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="#">Listar Plataformas </a>
-             <a class="dropdown-item" href="#">Cadastrar Plataformas</a>
+             <a class="dropdown-item" href="#" id="listMediaBtn">Listar Plataformas </a>
+             <a class="dropdown-item" href="#" id="mediaCadBtn">Cadastrar Plataformas</a>
            </div>
          </li>
        </ul>
      </div>
     </header>
+
+
     <main>
+      <!-- Div com divs dos cadastros -->
+      <div  class="container">
+        <div id="divCadastrar" class="form-row">
+
+          <div class="form-group col-md-8">
+            <h2> Cadastrar Programação </h2><br>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label for="inputEmail4">Nome</label>
+            <input type="text" class="form-control" id="input_attraction_name" placeholder="Nome">
+          </div>
+
+          <div class="form-group col-md-8">
+            <label for="inputPassword4">Descrição</label>
+            <textarea type="text"  class="form-control" id="input_description" rows="5" placeholder="Descrição"></textarea>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label for="inputAddress">Data de transmissão</label>
+            <input type="datetime-local" class="form-control" id="transmission_date">
+          </div>
+          <div id="divKind" class="form-group col-md-8">
+          </div>
+          <div id="divChannel" class="form-group col-md-8">
+          </div>
+          <div id="divMedia" class="form-group col-md-8">
+          </div>
+          <div  class="form-group col-md-8">
+            <button type="button" id="cad_att" class="btn btn-primary">Entrar</button>
+          </div>
+        </div>
+
+        <div id="divCadKind" class="form-row">
+          <div class="form-group col-md-8">
+            <h2> Cadastrar Tipo </h2><br>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label>Descrição do tipo</label>
+            <input type="text" class="form-control" id="input_description_kind" placeholder="Descrição">
+          </div>
+          <button type="button" id="cad_kind" class="btn btn-primary">Cadastrar</button>
+        </div>
+
+        <div id="divCadChannel" class="form-row">
+          <div class="form-group col-md-8">
+            <h2> Cadastrar Canal </h2><br>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label>Descrição do canal</label>
+            <input type="text" class="form-control" id="input_description_channel" placeholder="Descrição">
+          </div>
+          <button type="button" id="cad_channel" class="btn btn-primary">Cadastrar</button>
+        </div>
+
+        <div id="divCadMedia" class="form-row">
+          <div class="form-group col-md-8">
+            <h2> Cadastrar Plataforma </h2><br>
+          </div>
+
+          <div class="form-group col-md-8">
+            <label>Descrição da Plataforma</label>
+            <input type="text" class="form-control" id="input_description_media" placeholder="Descrição">
+          </div>
+          <button type="button" id="cad_media" class="btn btn-primary">Cadastrar</button>
+        </div>
+
+      </div>
+        <!-- Fim da Div com os cadastros -->
+
+      <!-- Div que lista a programacao -->
+      <div id="divListarProgramacao" class="form-row">
+
+        <div class="form-group col-md-8">
+          <h2> Lista de Programção </h2><br>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Plataforma</th>
+                <th scope="col">Canal</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyListProgam">
+            </tbody>
+          </table>
+        </div>
+      </div>
+        <!-- Fim da Div que lista os programacao  -->
+
+      <!-- Div que lista os tipos  -->
+      <div id="divListKind" class="form-row">
+
+        <div class="form-group col-md-8">
+          <h2> Lista de Tipos </h2><br>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyListKind">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="divListChannel" class="form-row">
+
+        <div class="form-group col-md-8">
+          <h2> Lista de Tipos </h2><br>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyListChannel">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div id="divListMedia" class="form-row">
+
+        <div class="form-group col-md-8">
+          <h2> Lista de Tipos </h2><br>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyListMedia">
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </main>
-
+    <footer></footer>
     <script src="js/jquery.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/attraction.js"></script>
+    <script src="js/kind.js"></script>
+    <script src="js/channel.js"></script>
+    <script src="js/media.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>

@@ -35,3 +35,64 @@ header a{
 header a:hover{
   color: white;
 }
+.container{
+  margin-top: 5%;
+  width: 50%;
+}
+
+#divCadastrar{
+  display: none;
+}
+
+#divListarProgramacao{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divCadKind{
+  display: none;
+}
+
+#divListKind{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divListChannel{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divListMedia{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divCadChannel{
+  display: none;
+}
+
+#divCadMedia{
+  display: none;
+}
+
+footer{
+  background-color: black;
+  margin-top:20%;
+}
