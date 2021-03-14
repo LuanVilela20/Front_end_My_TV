@@ -1,13 +1,21 @@
 //Abre a div de cadastrar a programacao
 $(".teste").on("click", function(){
-  $("#divListarProgramacao").hide();
-  $("#divCadKind").hide();
-  $("#divListKind").hide();
   $("#divCadastrar").show();
+  $("#divCadKind").hide();
+  $("#divCadChannel").hide();
+  $("#divListChannel").hide();
+  $("#divCadMedia").hide();
+  $("#divListMedia").hide();
+  $("#divListKind").hide();
+  $("#divListarProgramacao").hide();
 
+  $(".span").remove();
+  $("#select_kind").remove();
+  $("#select_channel").remove();
+  $("#select_media").remove();
   $.get("http://localhost:3000/kinds", function(response, status){
 
-    let selectKind = '<select id="select_kind"  name="select_kind" style="width:500px;"><option selected value="">Tipo</option> </select>';
+    let selectKind = '<select id="select_kind"  name="select_kind" style="width:500px;"><option selected value="">Tipo</option> </select><span class="span" style="color:red;">* Campo obrigatório!</span>';
     $("#divKind").append(selectKind);
     $.each(response, function(index, value){
 
@@ -21,7 +29,7 @@ $(".teste").on("click", function(){
 
   $.get("http://localhost:3000/channels", function(response, status){
 
-    let selectChanndel = '<select id="select_channel"  name="select_kind" style="width:500px;"><option selected value="0">Canais</option> </select>';
+    let selectChanndel = '<select id="select_channel"  name="select_channel" style="width:500px;"><option selected value="">Canais</option></select><span class="span" style="color:red;">* Campo obrigatório!</span>';
     $("#divChannel").append(selectChanndel);
     $.each(response, function(index, value){
 
@@ -35,7 +43,7 @@ $(".teste").on("click", function(){
 
   $.get("http://localhost:3000/media", function(response, status){
 
-    let selectMedia = '<select id="select_media"  name="select_kind" style="width:500px;"><option selected value="">Plataformas</option> </select>';
+    let selectMedia = '<select id="select_media"  name="select_media" style="width:500px;"><option selected value="">Plataformas</option> </select><span class="span" style="color:red;">* Campo obrigatório!</span>';
     $("#divMedia").append(selectMedia);
     $.each(response, function(index, value){
 
@@ -83,22 +91,24 @@ $("#programListBtn").on("click", function(){
 
 //acao de executar o cadastro a programacao
 $("#cad_att").on("click", function(){
-  var name = $("#input_attraction_name").val();
 
-  var dados = {"attraction":{
-        "attraction_name": $("#input_attraction_name").val(),
-        "description": $("#input_description").val(),
-        "transmission_date": $("#transmission_date").val(),
-        "kind_id": $("#select_kind").val(),
-        "channel_id": $("#select_channel").val(),
-        "medium_id": $("#select_media").val()
-      }
-  };
+  if($("#select_kind").val() == "" && $("#select_channel").val() == "" && $("#select_media").val() == ""){
+      alert("Campo obrigatorio vazio!");
+  }else{
+    var dados = {"attraction":{
+      "attraction_name": $("#input_attraction_name").val(),
+      "description": $("#input_description").val(),
+      "transmission_date": $("#transmission_date").val(),
+      "kind_id": $("#select_kind").val(),
+      "channel_id": $("#select_channel").val(),
+      "medium_id": $("#select_media").val()
+    }
+    };
   console.log(dados)
 
-  $.post("http://localhost:3000/attractions", dados, function(response, status){
-    console.log(status);
-    console.log(response);
-  })
-
+    $.post("http://localhost:3000/attractions", dados, function(response, status){
+      console.log(status);
+      console.log(response);
+    })
+  }
 })
