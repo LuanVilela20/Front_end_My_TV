@@ -1,0 +1,98 @@
+header {
+    background-color: #0a5e75;
+    box-shadow: 0 5px 0 black;
+}
+header img {
+  width: auto;
+  height: auto;
+  max-width: 400px;
+  max-height: 250px;
+  margin-left: 10%;
+
+}
+
+header h1{
+  font-family: Cambria, sans-serif;
+  color: White;
+  font-size: 70px;
+  margin-left: 30%;
+  position: absolute;
+  top: 12%;
+  left: -5%;
+}
+
+header ul{
+  position: absolute;
+  left:50%;
+  top: 15%;
+}
+
+header a{
+  color: White;
+  font-size: 20px;
+}
+
+header a:hover{
+  color: white;
+}
+.container{
+  margin-top: 5%;
+  width: 50%;
+}
+
+#divCadastrar{
+  display: none;
+}
+
+#divListarProgramacao{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divCadKind{
+  display: none;
+}
+
+#divListKind{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divListChannel{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divListMedia{
+  display: none;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+#divCadChannel{
+  display: none;
+}
+
+#divCadMedia{
+  display: none;
+}
+
+footer{
+  background-color: black;
+  margin-top:20%;
+}
